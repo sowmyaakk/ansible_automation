@@ -1,0 +1,23 @@
+# dnf install mysql-server -y
+# systemctl enable mysqld 
+# systemctl start  mysqld           
+# mysql_secure_installation --set-root-pass ExpenseApp@1
+# echo "** Mysql Installation Completed **"
+
+- name: Install {{COMPONENT}}
+  ansible.builtin.package:
+    name: mysql-serve
+    state: present
+
+- name: Enable and restart {{COMPONENT}}
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: true
+
+- name: Set root password
+  ansible.builtin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1
+
+- name: Print completion message
+  ansible.builtin.debug:
+    msg: "** {{COMPONENT}} Installation Is Completed **"

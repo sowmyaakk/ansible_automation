@@ -32,7 +32,7 @@
     path: /usr/share/nginx/html
     state: directory
 
-- name: Download and extract frontend files
+- name: Download and extract {{COMPONENT}} files
   ansible.builtin.unarchive:
     src: https://expense-web-app.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
@@ -46,4 +46,4 @@
 
 - name: Print completion message
   ansible.builtin.debug:
-    msg: "** Frontend Installation Is Completed **"
+    msg: "** {{COMPONENT}} Installation Is Completed **"
