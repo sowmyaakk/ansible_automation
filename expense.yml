@@ -1,5 +1,5 @@
 - name: configuing expenseapp
   hosts: frontend
-  become: yes
+  become: true
   roles:
     - roles: frontend
