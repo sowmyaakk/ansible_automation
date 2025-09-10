@@ -12,6 +12,10 @@
 
 # echo "** Frontend Installation Is Completed **"
 
+- name: Configuring Expense Frontend
+  hosts: frontend
+  become: true
+
 
 - name: Install nginx
   ansible.builtin.package:
