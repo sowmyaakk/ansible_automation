@@ -2,4 +2,4 @@
   hosts: frontend
   become: true
   roles:
-    -role:  frontend
+    - role: frontend
