@@ -1,4 +1,4 @@
--name: configuing expenseapp
+- name: configuing expenseapp
   hosts: frontend
   become: yes
   roles:

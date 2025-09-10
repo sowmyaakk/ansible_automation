@@ -18,17 +18,17 @@
     name: nginx
     state: present
 
--name: copy config file
+- name: copy config file
   ansible.builtin.copy:
     src: proxy.conf
     dest: /etc/nginx/default.d/expense.conf
 
--name: Create a directory if it does not exist
+- name: Create a directory if it does not exist
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: directory
 
--name: Remove all files in a directory
+- name: Remove all files in a directory
   ansible.builtin.file:
     path: /usr/share/nginx/html
     state: absent
@@ -43,7 +43,7 @@
     src: /tmp/frontend.zip
     dest: /usr/share/nginx/html
     remote_src: yes
--name: Enable and start nginx
+- name: Enable and start nginx
   ansible.builtin.service:
     name: nginx
     state: started
