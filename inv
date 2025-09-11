@@ -5,4 +5,4 @@
 54.158.4.247
 
 [backend]
-3.91.157.230
+3.91.157.230 ansible_python_interpreter=/usr/bin/python3
