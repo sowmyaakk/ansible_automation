@@ -76,13 +76,14 @@
     state: present
 
 - name: Importing DB schema
-  ansible.builtin.mysql_db:
+  community.mysql.mysql_db:
     login_host: 54.158.4.247
     login_user: root
     login_password: ExpenseApp@1
     name: backend
     state: import
     target: /app/schema/backend.sql
+
 
 
 - name: Reload systemd to reflect the changes made
