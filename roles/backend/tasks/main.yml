@@ -111,6 +111,7 @@
 
 - name: Reload systemd to reflect the changes made
   ansible.builtin.systemd:
+    name: backend
     daemon_reload: yes
     state: reloaded
     enabled: yes
