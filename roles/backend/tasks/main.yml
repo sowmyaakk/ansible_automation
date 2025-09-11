@@ -46,7 +46,6 @@
   ansible.builtin.get_url:
     url: https://expense-web-app.s3.amazonaws.com/backend.zip
     dest: /tmp/backend.zip
-    remote_src: yes
 
 - name: Copy backend service file
   ansible.builtin.copy:
