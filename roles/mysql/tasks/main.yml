@@ -6,7 +6,7 @@
 
 - name: Install {{COMPONENT}}
   ansible.builtin.package:
-    name: mysql-serve
+    name: mysql-server
     state: present
 
 - name: Enable and restart {{COMPONENT}}

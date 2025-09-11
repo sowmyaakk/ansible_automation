@@ -1,4 +1,4 @@
-- name: Configuring Expense Frontend
+- name: Configuring Expense "{{COMPONENT}}"
   hosts: "{{COMPONENT}}"
   become: true
   roles:
