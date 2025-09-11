@@ -20,10 +20,9 @@
 - name: set hostname
   ansible.builtin.shell: set-hostname "{{COMPONENT}}"
 
-- name: Disabling 'nodejs'
-  ansible.builtin.dnf:
-    name: nodejs
-    module_state: disabled
+
+- name: Disable nodejs module
+  ansible.builtin.command: dnf module disable nodejs -y
 
 - name: Enable specific version of a DNF module
   ansible.builtin.command: dnf module enable nodejs:20 -y
