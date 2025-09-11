@@ -84,8 +84,6 @@
     state: import
     target: /app/schema/backend.sql
 
-
-
 - name: Reload systemd to reflect the changes made
   ansible.builtin.systemd:
     daemon_reload: yes
