@@ -3,7 +3,9 @@
 # systemctl start  mysqld           
 # mysql_secure_installation --set-root-pass ExpenseApp@1
 # echo "** Mysql Installation Completed **"
-
+- name: set hostaname
+     ansible.builtin.shell: set-hostaname {{COMPONENT}}
+     
 - name: Install {{COMPONENT}}
   ansible.builtin.package:
     name: mysql-server
