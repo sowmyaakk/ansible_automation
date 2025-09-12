@@ -100,7 +100,7 @@
 
 - name: Importing DB schema
   community.mysql.mysql_db:
-    login_host: 54.158.4.247
+    login_host: 172.31.27.54
     login_user: root
     login_password: ExpenseApp@1
     name: backend
