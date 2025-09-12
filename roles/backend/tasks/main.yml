@@ -37,6 +37,11 @@
     name: expense
     comment: Expense Service Account
 
+- name : Cleanup 
+  ansible.builtin.file:
+    path: /app
+    state: absent
+
 - name : creating a directory
   ansible.builtin.file:
     path: /app
@@ -72,22 +77,15 @@
 
 - name: Install {{COMPONENT}}
   ansible.builtin.package:
-    name: mysql-server
-    state: present
-
-- name: Ensure pip3 is installed
-  ansible.builtin.package:
-    name: python3-pip
-    state: present
-
-- name: Install build dependencies for cryptography
-  ansible.builtin.package:
-    name:
+    name: 
+      - mysql-server
+      - python3-pip
       - gcc
       - python3-devel
       - libffi-devel
       - openssl-devel
     state: present
+
 
 - name: Install PyMySQL
   ansible.builtin.pip:
